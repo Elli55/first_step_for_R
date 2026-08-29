@@ -54,3 +54,82 @@ if (dir.exists("datas")){
 
 write.csv(db, file = "data/cats_any.csv", row.names = TRUE)
 
+write.csv(db, file = "datas/cats_any_row.csv", row.names = FALSE)
+
+cats <- read.csv("datas/cats_any_row.csv")
+
+cats
+str(cats)
+
+# data manipulation
+
+cats$cat_weight
+cats$cat_names
+
+cats$cat_weight + 2
+
+
+paste("My cat weight ",  cats$cat_weight)
+
+typeof(cats$cat_weight)
+typeof(cats$cat_names)
+typeof(cats$likes_catnip)
+
+# data adding 
+
+additional_one <- data.frame(cat_names = "Tobby",
+                             cat_weight = 5,
+                             likes_catnip = TRUE)
+
+additional_one
+
+cats2 <- rbind(cats, additional_one)
+cats2
+
+cats2$likes_catnip <- ifelse(cats2$likes_catnip == 1, TRUE, FALSE)
+cats2
+
+
+# lets talk about vector
+
+first_vector <- vector(length = 4)
+first_vector
+
+
+first_vector <- vector(mode = "character", length = 4)
+first_vector
+
+str(first_vector)
+str(cats2$cat_weight)
+
+
+mean(cats2$cat_weight)
+cats2$cat_weight[6]
+
+typeof(cats2)
+str(cats2)
+
+
+count <- seq(1, 10, by=0.1)
+count
+
+
+example <- 20:25
+
+head(example, n=2)
+tail(example, n=2)
+mean(example)
+length(example)
+length(count)
+
+test_ex <- 1:26
+test_ex / 2
+test_ex * 2
+test_ex ** 2
+
+
+
+list_example <- list(5 6, "a", TRUE, 4+5i)
+list_example  
+  
+  
