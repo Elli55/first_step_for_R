@@ -25,17 +25,17 @@ explained in very concise terms.
 
 **Operators:**
 
->**" <- "**  assigment / example: x <- 5 ==> x is 5 now
+> **" <-"**  assigment / example: x <- 5 ==> x is 5 now
 
->**" + "**  adding
+> **" + "**  adding
 
->**" - "**  subtraction
+> **" - "**  subtraction
 
->**" * "**  multiply
+> **" * "**  multiply
 
->**" / "**   divide
+> **" / "**   divide
 
->**" ** "**   raise to a power
+> **" ** "**   raise to a power
 
 first easier function is **c()** it means conbine. For example:
 
@@ -102,10 +102,10 @@ and doubles.
 **Examples:**
 
 >c(TRUE, FALSE, 5.4)
-> 1 0 5.4
+>> 1 0 5.4
 
 >c(5.3, 5L, 3.5)
->5.3 5.0 3.5
+>>5.3 5.0 3.5
 
 
 **paste and paste0**
@@ -113,19 +113,19 @@ and doubles.
 this functions for colobration the datas. But just give as the character format.
 
 > paste(1:3)
-> "1" "2" "3"
+>> "1" "2" "3"
 
 > paste(1:3, c("a", "b", "c"))
-> "1 a" "2 b" "3 c"
+>> "1 a" "2 b" "3 c"
 
 > paste(1:3, c("a", "b", "c"), collapse=",")
-> "1 a, 2 b, 3 c"
+>> "1 a, 2 b, 3 c"
 
 With the collapse element of the paste function, we can combine all the elements
 we have collaborated on into a character-type data.
 
 
---- The same functionality can also be achieved with the paste0 function, the
+>>> --- The same functionality can also be achieved with the paste0 function, the
 only difference is that there will be no spaces between the elements. In other 
 words, an output like "1a 2b 3c" will be obtained. ---
 
@@ -140,7 +140,7 @@ This is the simplest and shortest way to create a dataframe. The element names
 you write here will be the names of your columns, and the elements you provide 
 with the c() function will be written into those columns. 
 
->  cat_names cat_weight likes_catnip
+>>  cat_names cat_weight likes_catnip
 1      bush        5.7            1
 2      mush        7.7            0
 3    kartof       10.0            0
@@ -172,10 +172,10 @@ and what its data format is.
  $ likes_catnip: int  1 0 0
  
  >cats$cat_names
- >[1] "bush"   "mush"   "kartof"
+ >>[1] "bush"   "mush"   "kartof"
  
  >cats$cat_weight
- >[1]  5.7  7.7 10.0
+ >>[1]  5.7  7.7 10.0
 
 These were simple examples; you can explore more in the documentation.
  
