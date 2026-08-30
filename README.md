@@ -25,27 +25,27 @@ explained in very concise terms.
 
 **Operators:**
 
-**<-  assigment / example: x <- 5 ==> x is 5 now**
+>**" <- "**  assigment / example: x <- 5 ==> x is 5 now
 
-**+  adding**
+>**" + "**  adding
 
-**-  subtraction**
+>**" - "**  subtraction
 
-**" *  multiply**
+>**" * "**  multiply
 
-**/  divide**
+>**" / "**   divide
 
-**" **   raise to a power**
+>**" ** "**   raise to a power
 
 first easier function is **c()** it means conbine. For example:
 
 > c(1:5)
 >
-> output:
+>> output:
 > 
-> 1 2 3 4 5
+>> 1 2 3 4 5
 
->>>> "1:5" means to arrange the numbers from 1 to 5, including 1 and 5. 
+**"1:5" means to arrange the numbers from 1 to 5, including 1 and 5.** 
 
 Functions perform the same role as in all other programming languages: certain 
 elements are defined by you, and the function carries out a specific operation 
@@ -58,26 +58,30 @@ needs.
 ## Data types
 
 **CHARACTER** - its a text format data,like a str in Python (exp: "cat", "3.5")
+
 **COMPLEX** - its a special data type for scientific works (exp: 1+1i)
+
 **DOUBLE** - its a decimal format of number, historical name is **numeric**, 
                 **based C >> double >> 8 byte** 
+                
 **integer** - its a real number format, "for using this data we need also add
               'L' at the end of data. 
               For exampl: **"5" = double / "5L" = integer**. R take holl numbers
               as a decimal without this L. 
+              
 **LOGICAL** - binary elemets, traditional TRUE/FALSE. 
 
 
 ## tring work with simple functions
 
 > c(1, 2, 3)
-> 1 2 3 
+>> 1 2 3 
 
 > c("be", "the", "next")
-> "be" "the" "next"
+>> "be" "the" "next"
 
 > c(1, 2, "next")
-> "1" "2" "next"
+>> "1" "2" "next"
 
 As you can see, the c() function creates a vector. But what is a vector? A 
 vector is an array of the same elements. In it, we can access each element 
