@@ -140,10 +140,11 @@ This is the simplest and shortest way to create a dataframe. The element names
 you write here will be the names of your columns, and the elements you provide 
 with the c() function will be written into those columns. 
 
->>  cat_names cat_weight likes_catnip
->> 1      bush        5.7            1
->> 2      mush        7.7            0
->> 3    kartof       10.0            0
+| cat_names | cat_weight | likes_catnip |
+|:----------|-----------:|-------------:|
+| bush      |        5.7 |            1 |
+| mush      |        7.7 |            0 |
+| kartof    |       10.0 |            0 |
 
 We use the write.csv function to write this data frame to a CSV file.
 
@@ -167,9 +168,9 @@ With this function, we can find out which columns our dataframe consists of
 and what its data format is. 
 
 >'data.frame':	3 obs. of  3 variables:
- $ cat_names   : chr  "bush" "mush" "kartof"
- $ cat_weight  : num  5.7 7.7 10
- $ likes_catnip: int  1 0 0
+>> $ cat_names   : chr  "bush" "mush" "kartof"
+>> $ cat_weight  : num  5.7 7.7 10
+>> $ likes_catnip: int  1 0 0
  
  >cats$cat_names
  >>[1] "bush"   "mush"   "kartof"
