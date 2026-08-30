@@ -134,9 +134,9 @@ words, an output like "1a 2b 3c" will be obtained. ---
 
 > db <- data.frame(cat_names = c("bush", "mush", "kartof"),
 > 
-                 cat_weight = c(5.7, 7.7, 10),
-                 
-                 likes_catnip = c(1, 0, 0))
+>                 cat_weight = c(5.7, 7.7, 10),
+>                 
+>                 likes_catnip = c(1, 0, 0))
 
 This is the simplest and shortest way to create a dataframe. The element names 
 you write here will be the names of your columns, and the elements you provide 
@@ -175,12 +175,19 @@ and what its data format is.
 >> $ cat_weight  : num  5.7 7.7 10
 >> 
 >> $ likes_catnip: int  1 0 0
+
+
+
+ Lets try:
  
  >cats$cat_names
  >>[1] "bush"   "mush"   "kartof"
+
  
  >cats$cat_weight
  >>[1]  5.7  7.7 10.0
+
+
 
 These were simple examples; you can explore more in the documentation.
  
