@@ -24,20 +24,28 @@ explained in very concise terms.
 ## Operators and functions
 
 **Operators:**
+
 **<-  assigment / example: x <- 5 ==> x is 5 now**
+
 **+  adding**
+
 **-  subtraction**
+
 **" *  multiply**
+
 **/  divide**
+
 **" **   raise to a power**
 
 first easier function is **c()** it means conbine. For example:
 
 > c(1:5)
+>
 > output:
+> 
 > 1 2 3 4 5
 
->>>>> "1:5" means to arrange the numbers from 1 to 5, including 1 and 5. 
+>>>> "1:5" means to arrange the numbers from 1 to 5, including 1 and 5. 
 
 Functions perform the same role as in all other programming languages: certain 
 elements are defined by you, and the function carries out a specific operation 
