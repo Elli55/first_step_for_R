@@ -1,6 +1,6 @@
 # First step for R
->last change 30.08.2026
->i have not enough good english, becouse of that sometimes i used DeepL. 
+**last change 30.08.2026**
+**i have not enough good english, becouse of that sometimes i used DeepL.** 
 
 # Why i learn
  
@@ -22,7 +22,7 @@ explained in very concise terms.
 ## Operators and functions
 
 **Operators:**
-> <- > assigment / example: x <- 5 ==> x is 5 now
+> <- >> assigment / example: x <- 5 ==> x is 5 now
 > + >> adding
 > - >> subtraction
 > * >> multiply
