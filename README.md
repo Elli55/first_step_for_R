@@ -1,8 +1,8 @@
 # First step for R
 
-**last change 30.08.2026**
 
-**i have not enough good english, becouse of that sometimes i used DeepL.** 
+>last change 31.08.2026
+
 
 # Why i learn
  
@@ -194,13 +194,50 @@ These were simple examples; you can explore more in the documentation.
  
 ## Vectors 
 
+Vectors are arrays consisting of data of the same type. 
 
+For example: 
+
+> [chr] 1, 3, 4
  
- 
+Technically, it is possible to create an empty vectoe,
+we just need to specify its length.  
 
+> emty_vector <- vector(length = 4)
 
+To access any element of a vector, you need to write the element's index. 
+Additionally, I should note that, unlike in many other languages, indexing 
+in R starts from 1.
 
+> pizzaa_price <- c(margarita = 2.5, 
+>                  napoli = 5.5, 
+>                  nese =7.5, 
+>                  callapizza = 10)
 
+>pizzaa_price[2:4]
 
+> napoli       nese    callapizza 
+>   5.5        7.5       10.0 
+
+>pizzaa_price["nese"]
+
+>7.5
+
+# Lists
+
+It is a format that groups data of various types under headings within a list.
+It is identical to the format of **a DICT in Python** or **a .json** file. The
+only point is that the headings within the list are themselves each a vector. In 
+other words, the elements within a heading inside the list are also converted 
+to the same data type in the same hierarchical format we mentioned above.  
+
+> combine_list <- list(titles = "numbers", value = 1:10, data = TRUE)
+
+To access the elements of the list, it is sufficient to write the name of the 
+header, using **the $ symbol** as in a data frame. 
+
+> combine_list$titles
+
+>[1] "numbers"
 
 
