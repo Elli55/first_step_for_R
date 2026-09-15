@@ -1,0 +1,264 @@
+---
+title: "First step for R"
+
+author: "[Elli](https://doneatelli.com)"
+
+date: "\nLast Update : `r Sys.Date()`"
+output: github_document
+---
+
+
+## Why i learn
+ 
+To be honest, I should mention that I had no particular interest in the R 
+programming language or in statistics. It was simply one of the requirements 
+for the module I'm about to start at university. However, in the early stages
+I've begun to find it interesting.
+ 
+I am starting to learn with the following platform:
+[R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/index.html)
+
+In addition, R has built-in help functions. For example, by writing the name of
+any data type, package or function within the parentheses of the `help()` 
+function, you can access its documentation and full usage instructions, 
+explained in very concise terms.
+
+## Operators and functions
+
+**Operators:**
+
+> **" <-"**  assigment / example: x <- 5 ==> x is 5 now
+
+> **" + "**  adding
+
+> **" - "**  subtraction
+
+> **" * "**  multiply
+
+> **" / "**   divide
+
+> **" ** "**   raise to a power
+
+first easier function is **c()** it means conbine. For example:
+
+```{r}
+c(1:5)
+```
+
+**"1:5" means to arrange the numbers from 1 to 5, including 1 and 5.** 
+
+Functions perform the same role as in all other programming languages...
+
+## Data types
+
+**CHARACTER** - its a text format data, like a str in Python (exp: "cat", "3.5")
+
+**COMPLEX** - its a special data type for scientific works (exp: 1+1i)
+
+**DOUBLE** - its a decimal format of number, historical name is **numeric**, 
+                **based C >> double >> 8 byte**
+                
+**integer** - its a real number format, "for using this data we need also add
+              'L' at the end of data.
+              For exampl: **"5" = double / "5L" = integer**. R take holl numbers
+              as a decimal without this L.
+              
+**LOGICAL** - binary elemets, traditional TRUE/FALSE.
+
+## trying work with simple functions
+
+```{r}
+c(1, 2, 3)
+c("be", "the", "next")
+c(1, 2, "next")
+```
+
+As you can see, the c() function creates a vector...
+
+**Hierarchy:** logical -> integer -> double -> complex -> character
+
+**Examples:**
+
+```{r}
+c(TRUE, FALSE, 5.4)
+c(5.3, 5L, 3.5)
+```
+
+**paste and paste0**
+
+```{r}
+paste(1:3)
+paste(1:3, c("a", "b", "c"))
+paste(1:3, c("a", "b", "c"), collapse = ",")
+paste0(1:3, c("a", "b", "c"))
+```
+
+## Data Frames
+
+```{r}
+db <- data.frame(cat_names = c("bush", "mush", "kartof"),
+                 cat_weight = c(5.7, 7.7, 10),
+                 likes_catnip = c(1, 0, 0))
+
+db
+```
+
+We use the write.csv function to write this data frame to a CSV file.
+
+```{r, eval=FALSE}
+write.csv(db, file = "data/cats_any.csv", row.names = TRUE)
+```
+
+```{r}
+cats <- db  
+str(cats)
+```
+
+```{r}
+cats$cat_names
+cats$cat_weight
+```
+
+## Vectors
+
+```{r}
+pizzaa_price <- c(margarita = 2.5, 
+                  napoli = 5.5, 
+                  nese = 7.5, 
+                  callapizza = 10)
+
+pizzaa_price[2:4]
+pizzaa_price["nese"]
+```
+
+# Lists
+
+```{r}
+combine_list <- list(titles = "numbers", value = 1:10, data = TRUE)
+combine_list$titles
+```
+
+# Working with DataFames
+
+First, let's talk about the cbind() and rbind() functions. Here, **cbin = column bind** and **rbind = row** bind. As the names suggest, we use them to add a new column or a new row.
+
+```{r}
+
+need_medicine <- c(1, 1, 0)
+db_with_new_column <- cbind(db, need_medicine)
+db_with_new_column
+
+```
+
+```{r}
+new_cat = c('Pomidor', 3.3, 0, 0)
+db_with_new_row <- rbind(db_with_new_column, new_cat)
+db_with_new_row
+
+```
+
+ Another interesting combination or addition function is the **merge()** function. We can think of this as the equivalent of the JOIN function in SQL. With the **by** parameter, we select a specific column, thereby defining which column the join will be performed on.
+
+```{r}
+DataFrame1 <- data.frame(patient_idx = 1:5,
+                         patient_name = c('John', 'Mohn', 'Gohn', 'Dohn', 'Bohn')
+                         )
+DataFrame2 <- data.frame(patient_idx = 1:5,
+                         need_medicine = c(1, 1, 1, 0, 0))
+
+DataFrame1
+DataFrame2
+
+```
+
+
+```{r}
+merge(DataFrame1, DataFrame2, by='patient_idx')
+
+```
+
+With the additional **all** parameter, we can perform the LEFT JOIN, RIGHT JOIN, and INNER JOIN operations familiar from SQL. 
+
+```{r}
+data_frame_1 <- data.frame(patient_idx = 1:5,
+                           patient_name = c('John', 'Mohn', 'Gohn', 'Dohn', 'Bohn'),
+                           need_medicine = c(1,0,1,1,0))
+
+data_frame_2 <- data.frame(patient_idx = 1:5,
+                           patient_name =c('John', 'Mohn', 'Mruh', 'Dohn', 'Bruh'),
+                           paid = c(1,0,1,1,1))
+
+data_frame_1
+data_frame_2
+
+```
+
+We now have two separate data sets with different information. Let's find the common information in both, see which patient has paid for the medication, and know that we can start the delivery. To do this, we will need the INNER JOIN function, familiar to us from SQL.
+
+For this, the rows that are present in both tables are needed. 
+
+```{r}
+
+merge(data_frame_1, data_frame_2,
+      by='patient_name', all=FALSE) #by default the all parameter is always FALSE
+
+```
+
+And here we see 3 patients, Dohn, John and Mohn. We can see that for Dohn and John, the **need_medicine** column is marked with a 1, which means TRUE, indicating they need medication. At the same time, in the **paid** column, we see a 1, or TRUE, next to their names, which means they have already made the payments. Therefore, the medicines for them should now be sent. However, for the patient named John, we see a 0 or FALSE in the **need_medicine** column, which means this patient does not need the medicine, and logically, we also see a 0 or FALSE in the **paid** column. 
+
+patient_idx.x and patient_idx.y give us the corresponding id_numbersof the patients in the first and second tables. 
+Now let's try to find the corresponding values in the second table for the values in the first table. In other words, let's get information about the payments for the patients in the first table. If a name is in the first table but not in the payments table, it will receive a NA value. To do this, we will need the LEFT JOIN function, familiar to us from SQL. In R, we will again use the **merge()** function for this, and the only parameter we will change will be the **all** parameter. 
+
+```{r}
+merge(data_frame_1, data_frame_2, by='patient_name', all.x=TRUE)
+
+```
+
+We can also do the exact opposite of this. In SQL terms, we can also perform a LEFT JOIN. 
+
+```{r}
+merge(data_frame_1, data_frame_2, 
+      by='patient_name', all.y=TRUE)
+
+```
+
+And finally, a function that combines both tables, replacing any value in one that does not exist in the other with NA, is analogous to the OUTER JOIN function in SQL.
+
+```{r}
+
+merge(data_frame_1, data_frame_2,
+      by='patient_name', all=TRUE)
+
+```
+
+
+## Simple web data 
+
+With the data reading functions in the R language, it is possible to read data directly from the internet, just as in Pandas. Instead of specifying a file path, it is sufficient to provide the full link. For example, I am sharing an example below.
+
+Additionally, you can use the **head()** function to read the first few rows of any DataFrame, and the **tail()** function to read the last few elements. You can also pass a number as a comma-separated value to both functions. 
+
+
+```{r}
+gapminder <- read.csv("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/main/episodes/data/gapminder_data.csv")
+head(gapminder)
+tail(gapminder,5)
+```
+
+To get a first look, we use the **str()** function. We also know that in dataframes, all columns are vectors and all rows are lists. Therefore, to access the columns of a dataframe, we use the **$** operator.  We can even learn the data type of a single column with the help of the **typeof()** function. 
+
+```{r}
+
+str(gapminder)
+
+summary(gapminder)  
+
+typeof(gapminder$pop)
+
+str(gapminder$continent)
+
+```
+
+
+Have you noticed the **summary()** function? It allows us to learn very important and interesting information about the columns in a DataFrame with a single function.
+ 

@@ -49,4 +49,40 @@ ist_cofee <- c(TRUE, FALSE)
 cbind(new_self, ist_cofee)  
   
 
-  
+# web data 
+
+gapminder <- read.csv("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/main/episodes/data/gapminder_data.csv")
+
+str(gapminder)
+
+summary(gapminder)  
+
+typeof(gapminder$pop)
+
+str(gapminder$continent)
+
+
+colnames(gapminder)
+
+head(gapminder)
+
+n <- length(gapminder$country)
+
+gapminder$year[(n - 4):n]
+tail(gapminder$year, 4)
+
+
+
+prob_idx <- sample(nrow(gapminder), 5)
+
+random_5 <- gapminder[prob_idx,]
+random_5
+
+View(gapminder)
+
+write.csv(gapminder, file = 'datas/gapminder_self.csv')
+
+
+
+
+
