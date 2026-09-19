@@ -1,7 +1,7 @@
 First step for R
 ================
 [Elli](https://doneatelli.com)
-Last Update : 2026-09-15
+Last Update : 2026-09-19
 
 ## Why i learn
 
@@ -55,9 +55,9 @@ Functions perform the same role as in all other programming languages…
 **COMPLEX** - its a special data type for scientific works (exp: 1+1i)
 
 **DOUBLE** - its a decimal format of number, historical name is
-**numeric**, **based C \>\> double \>\> 8 byte**
+**NUMERİC**, **based C \>\> double \>\> 8 byte**
 
-**integer** - its a real number format, “for using this data we need
+**İNTEGER** - its a real number format, “for using this data we need
 also add ‘L’ at the end of data. For exampl: **“5” = double / “5L” =
 integer**. R take holl numbers as a decimal without this L.
 
