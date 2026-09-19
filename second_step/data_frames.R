@@ -83,6 +83,45 @@ View(gapminder)
 write.csv(gapminder, file = 'datas/gapminder_self.csv')
 
 
+# subsetting
+
+x <- c(1.3,23.3,1.3,1)
+names(x) <- c('a','b','c','d')
+x
+
+x[2]
+x[c(1:3)]
+x[c(1,3)]
+
+x[c(1,1,2)]
+
+x[0]
+
+x[-3]
+
+x[c(-(2:4))]
+
+
+y <- c(a=1.5, b=1.2, c=3.4, d=3.2)
+
+y[c('a', 'b')]
+
+y[c(1:3)]
+
+
+y[c(TRUE, FALSE,FALSE, TRUE)]
+
+y[y<1.5]
+y[y<3]
+
+y[names(y) == 'a']
+
+
+z <- c(12,4,9,7,3)
+names(z) <- c('a','b', 'c','d', 'e')
+
+z[z<7 & z>4]
+
 
 
 
